@@ -30,7 +30,7 @@ function SurveyForm() {
         <FormProvider {...form}>
             <form 
                 onSubmit={form.handleSubmit(onSubmit)}
-                className='border relative p-4 w-11/12 max-w-5xl h-[600px] flex justify-center items-center rounded-md'
+                className='border border-border/30 shadow-xs relative p-4 w-11/12 max-w-5xl h-[600px] flex justify-center items-center rounded-md bg-gradient-to-br from-white to-muted'
                 noValidate
             >
                 <div className="max-w-xl w-full mx-auto">
