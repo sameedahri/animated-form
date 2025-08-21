@@ -18,6 +18,9 @@ function ConcernsForm() {
                 name="concerns"
                 control={form.control}
                 options={ROOF_CONCERNS_OPTIONS}
+                radioButtonOptions={{
+                    autoFocus: true
+                }}
             />
             <EnterButton />
         </FormGroup>

@@ -5,8 +5,6 @@ import { FormProvider, useForm } from 'react-hook-form'
 import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import z from 'zod'
-import SurveyHeader from '@/components/survey-header'
-import { useNavigationDirection } from '@/context/survey-form-provider'
 import SurveyNavigation from '@/components/survey-navigation'
 import { AnimatePresence } from 'motion/react'
 
@@ -25,17 +23,18 @@ function SurveyForm() {
             next()
             return
         }
-        console.log(data)
+        console.log(form.getValues())
     }
 
     return (
         <FormProvider {...form}>
             <form 
                 onSubmit={form.handleSubmit(onSubmit)}
-                className='border relative w-full  max-w-5xl h-[600px] flex justify-center items-center rounded-md'
+                className='border relative p-4 w-11/12 max-w-5xl h-[600px] flex justify-center items-center rounded-md'
+                noValidate
             >
                 <div className="max-w-xl w-full mx-auto">
-                    <AnimatePresence>
+                    <AnimatePresence initial={false}>
                         <current.Form />
                     </AnimatePresence>
                 </div>

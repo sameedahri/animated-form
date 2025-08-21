@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { cva, type VariantProps } from "class-variance-authority"
 import { Icon } from "@/types/icon.type"
 
-export const className = `border-b placeholder:text-placeholder border-input outline-none w-full bg-transparent scroll-mt-5 transition-all focus-visible:border-primary focus-visible:border-b-2 aria-invalid:border-destructive disabled:bg-muted disabled:text-muted-foreground`
+export const className = `border-b placeholder:text-placeholder border-input outline-none w-full bg-transparent scroll-mb-5 transition-all focus-visible:border-primary focus-visible:border-b-2 aria-invalid:border-destructive disabled:bg-muted disabled:text-muted-foreground`
 
 const iconClassName = "outline-none focus-visible:ring-2 ring-primary/50 focus-visible:ring-offset-2 rounded absolute text-muted-foreground/70 size-5 ring-offset-background"
 
@@ -18,7 +18,7 @@ const inputVariants = cva(
           "border-destructive text-destructive placeholder:text-placeholder focus-visible:ring-destructive/50 focus-visible:border-destructive",
       },
       size: {
-        default: "h-11 px-3 py-1 text-base placeholder:text-base md:text-lg",
+        default: "h-11 px-3 py-1 text-base placeholder:text-base md:text-lg xl:text-xl xl:placeholder:text-lg",
         sm: "h-9 px-2.5 text-sm rounded-md",
         lg: "h-10 px-4 py-2 text-base",
       },

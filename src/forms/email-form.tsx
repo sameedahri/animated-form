@@ -20,6 +20,7 @@ function EmailForm() {
                 type="email"
                 inputWrapperClassName="w-full"
                 inputGroupClassName="w-full"
+                autoFocus
             />
             <EnterButton />
         </FormGroup>

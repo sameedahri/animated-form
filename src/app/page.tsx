@@ -3,7 +3,7 @@ import SurveyForm from "@/forms/survey-form";
 
 export default function Home() {
     return (
-        <div className="min-h-svh flex items-center justify-center">
+        <div className="py-20 flex items-center justify-center overflow-y-hidden">
             <SurveyFormProvider>
                 <SurveyForm />
             </SurveyFormProvider>

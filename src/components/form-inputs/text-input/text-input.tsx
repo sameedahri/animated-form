@@ -58,6 +58,7 @@ export function TextInput<
                                 value={fieldValue}
                                 {...inputProps}
                                 aria-invalid={isInvalid}
+                                autoFocus={(inputProps.autoFocus && !field.value) ? true : false}
                             />
                         ) : (
                             <Input
@@ -66,6 +67,7 @@ export function TextInput<
                                 {...field}
                                 value={fieldValue}
                                 {...inputProps}
+                                autoFocus={(inputProps.autoFocus && !field.value) ? true : false}
                             />
                         )}
                     </FormGroup>

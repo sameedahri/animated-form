@@ -21,20 +21,20 @@ import PhoneNumberForm from "@/forms/phone-number-form";
 export const surveyFormStepper = defineStepper<StepType<SurveyFormType>[]>(
     {
         id: "1",
-        question: "Enter your zip code to see if your neighborhood is approved. This question is required.",
+        question: "Enter your zip code to see if your neighborhood is approved.*",
         Form: ZipcodeForm,
         schema: zipCodeFormSchema,
     },
     {
         id: "2",
-        question: "Do you own your home? This question is required",
+        question: "Do you own your home?*",
         Form: OwnershipForm,
         schema: ownershipFormSchema,
 
     },
     {
         id: "3",
-        question: "How old is your roof? This question is required.",
+        question: "How old is your roof?*",
         Form: RoofAgeForm,
         schema: roofAgeFormSchema,
     },

@@ -4,8 +4,9 @@ import { ROOF_AGE_OPTIONS, ROOF_CONCERNS_OPTIONS, YES_NO_OPTIONS } from "@/const
 
 export const zipCodeFormSchema = z.object({
     zipCode: numberSchema
-        .min(10000, "Zip code must be at least 6 digits")
-        .max(99999, "Zip code must be less than 6 digits"),
+        // minimum 3 digits maximum 6 digits
+        .min(10000, "Zip code must be at least 5 digits")
+        .max(999999, "Zip code should not be greater than 6 digits")
 })
 
 export const ownershipFormSchema = z.object({

@@ -18,6 +18,9 @@ function RoofAgeForm() {
                 name="roofAge"
                 control={form.control}
                 options={ROOF_AGE_OPTIONS}
+                radioButtonOptions={{
+                    autoFocus: true
+                }}
             />
             <EnterButton />
         </FormGroup>

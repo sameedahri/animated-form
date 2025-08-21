@@ -77,7 +77,7 @@ function PhoneInput<
                         aria-invalid={!!fieldState.error}
                         {...field}
                         {...props}
-                        className='w-full rounded-sm'
+                        className='w-full rounded-sm scroll-mb-5'
                     />
                 </FormGroup>
             )}

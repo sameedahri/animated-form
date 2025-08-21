@@ -11,13 +11,13 @@ function FormGroup({ children, className }: PropsWithChildren<{ className?: stri
 
     const variants = {
         enter: (d: 1 | -1) => ({ 
-            opacity: 0, y: d > 0 ? 200 : -200 
+            opacity: 0, y: d > 0 ? -250 : 250 
         }),
         center: { 
             opacity: 1, y: 0 
         },
         exit: (d: 1 | -1) => ({ 
-            opacity: 0, y: d > 0 ? -200 : 200 
+            opacity: 0, y: d > 0 ? 250 : -250 
         }),
     }
     return (

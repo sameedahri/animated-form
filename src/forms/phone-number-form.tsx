@@ -19,6 +19,7 @@ function PhoneNumberForm() {
                 placeholder="Enter your phone number"
                 inputWrapperClassName="w-full"
                 inputGroupClassName="w-full"
+                autoFocus
             />
             <EnterButton />
         </FormGroup>

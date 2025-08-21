@@ -20,6 +20,7 @@ function StreetAddressForm() {
                 type="text"
                 inputWrapperClassName="w-full"
                 inputGroupClassName="w-full"
+                autoFocus
             />
             <EnterButton />
         </FormGroup>

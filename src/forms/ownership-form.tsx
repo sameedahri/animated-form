@@ -16,6 +16,9 @@ function OwnershipForm() {
                 name='ownership'
                 control={form.control}
                 options={YES_NO_OPTIONS}
+                radioButtonOptions={{
+                    autoFocus: true
+                }}
             />
             <EnterButton />
         </FormGroup>
