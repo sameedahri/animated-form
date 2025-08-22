@@ -28,6 +28,8 @@
       "@/hooks/*": ["./src/hooks/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/contexts/*": ["./src/contexts/*"],
+      "@/actions/*": ["./src/actions/*"],
+      "@/constants/*": ["./src/constants/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/survey-navigation.tsc"],

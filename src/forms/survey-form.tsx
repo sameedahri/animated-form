@@ -7,6 +7,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import z from 'zod'
 import SurveyNavigation from '@/components/survey-navigation'
 import { AnimatePresence } from 'motion/react'
+import { postContact } from '@/actions/ghl'
+import { errorToast, successToast } from '@/lib/toast'
 
 function SurveyForm() {
 
@@ -23,14 +25,19 @@ function SurveyForm() {
             next()
             return
         }
-        console.log(form.getValues())
+        const res = await postContact(form.getValues())
+        if(!res.success) {
+            errorToast("Failed to submit your information")
+            return
+        }
+        successToast("Successfully submitted your information!")
     }
 
     return (
         <FormProvider {...form}>
             <form 
                 onSubmit={form.handleSubmit(onSubmit)}
-                className='border border-border/30 shadow-xs relative p-4 w-11/12 max-w-5xl h-[600px] flex justify-center items-center rounded-md bg-gradient-to-br from-white to-muted'
+                className='relative w-11/12 max-w-5xl h-[600px] flex justify-center items-center'
                 noValidate
             >
                 <div className="max-w-xl w-full mx-auto">
@@ -38,7 +45,7 @@ function SurveyForm() {
                         <current.Form />
                     </AnimatePresence>
                 </div>
-                <div className="absolute right-5 bottom-5"> 
+                <div className="absolute right-0 bottom-0"> 
                     <SurveyNavigation />
                 </div>
             </form>

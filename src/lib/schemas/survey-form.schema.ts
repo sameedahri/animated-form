@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { emailSchema, numberSchema, phoneSchema, selectOptionSchema, selectSchema, textSchema } from "./common.schema";
 import { ROOF_AGE_OPTIONS, ROOF_CONCERNS_OPTIONS, YES_NO_OPTIONS } from "@/constants/select-options";
+import { GHL_CUSTOM_FIELDS } from "@/constants/ghl-custom-field-ids";
 
 export const zipCodeFormSchema = z.object({
     zipCode: numberSchema
@@ -58,13 +59,23 @@ export const surveyFormSchema = z.object({
     ...emailFormSchema.shape,
 })
 
-// export const surveyFormSchema = zipCodeFormSchema
-//     .extend(ownershipFormSchema)
-//     .extend(roofAgeFormSchema)
-//     .extend(concernsFormSchema)
-//     .extend(firstNameFormSchema)
-//     .extend(lastNameFormSchema)
-//     .extend(phoneNumberFormSchema)
-//     .extend(streetAddressFormSchema)
-//     .extend(cityFormSchema)
-//     .extend(emailFormSchema)
+/**
+ * Converts the survey form to a GHL contact schema
+ */
+export const surveyFormToGhlContactSchema = surveyFormSchema.transform((data) => {
+    return {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phoneNumber,
+        address1: data.streetAddress,
+        city: data.city,
+        postalCode: data.zipCode.toString(),
+        tags: ["lead"],
+        customField: {
+            [GHL_CUSTOM_FIELDS.ROOF_AGE]: data.roofAge,
+            [GHL_CUSTOM_FIELDS.OWNERSHIP]: data.ownership,
+            [GHL_CUSTOM_FIELDS.CONCERNS]: data.concerns,
+        }
+    }
+})

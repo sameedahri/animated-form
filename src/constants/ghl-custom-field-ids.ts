@@ -1,0 +1,5 @@
+export const GHL_CUSTOM_FIELDS = {
+    ROOF_AGE: "xmyOdqI3SHINJUSqxPUZ",
+    OWNERSHIP: "PKmseb5MnUGKTH0alHUM",
+    CONCERNS: "b5Pq8enRhTKBmbvHaSTA",
+}
