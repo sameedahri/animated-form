@@ -44,11 +44,11 @@ function CardCheckboxInput<
             control={control}
             name={name}
             render={({ field }) => (
-                <FormItem>
+                <FormItem className='min-w-[200px] w-full md:w-auto'>
                     <FormControl>
                         <RadixRadioGroup.Root
                             value={field.value || ""}
-                            className="w-full flex flex-col gap-4"
+                            className="flex flex-col gap-4"
                             onPointerDown={(e) => {
                                 lastInputRef.current = e.pointerType as 'mouse' | 'touch' | 'pen'
                             }}
@@ -75,7 +75,7 @@ function CardCheckboxInput<
                                     value={option.value}
                                     autoFocus={index === 0 && radioButtonOptions?.autoFocus}
                                     className={cn(
-                                        "relative group border border-primary/20 min-w-[200px] rounded-md py-2 px-4 text-start grid grid-cols-[auto_1fr_auto] items-center gap-2 cursor-pointer hover:bg-primary/12 focus-visible:ring-3 focus-visible:ring-ring/50 transition-all duration-200 bg-primary/5",
+                                        "relative group border border-primary/20 rounded-md py-2 px-4 text-start grid grid-cols-[auto_1fr_auto] items-center gap-2 cursor-pointer hover:bg-primary/12 focus-visible:ring-3 focus-visible:ring-ring/50 transition-all duration-200 bg-primary/5",
                                         "data-[state=checked]:bg-primary/10 data-[state=checked]:border-primary/40",
                                     )}
                                 >

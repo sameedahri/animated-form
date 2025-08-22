@@ -37,7 +37,7 @@ function SurveyForm() {
         <FormProvider {...form}>
             <form 
                 onSubmit={form.handleSubmit(onSubmit)}
-                className='relative w-11/12 max-w-5xl h-[600px] flex justify-center items-center'
+                className='relative w-11/12 max-w-5xl h-[500px] flex justify-center items-center'
                 noValidate
             >
                 <div className="max-w-xl w-full mx-auto">
@@ -45,7 +45,7 @@ function SurveyForm() {
                         <current.Form />
                     </AnimatePresence>
                 </div>
-                <div className="absolute right-0 bottom-0"> 
+                <div className="absolute right-0 bottom-2"> 
                     <SurveyNavigation />
                 </div>
             </form>

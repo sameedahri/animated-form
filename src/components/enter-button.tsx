@@ -6,7 +6,7 @@ import { CornerDownLeft } from 'lucide-react'
 
 function EnterButton() {
     const { useStepper } = useSurveyFormStepper()
-    const { next, isLast } = useStepper()
+    const { isLast } = useStepper()
     const { formState: { isSubmitting } } = useFormContext()
 
     const buttonText = isLast ? 'Submit' : 'Ok'
