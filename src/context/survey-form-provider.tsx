@@ -2,10 +2,8 @@
 
 import ZipcodeForm from "@/forms/zipcode-form";
 import { cityFormSchema, concernsFormSchema, emailFormSchema, firstNameFormSchema, lastNameFormSchema, ownershipFormSchema, phoneNumberFormSchema, roofAgeFormSchema, streetAddressFormSchema, zipCodeFormSchema } from "@/lib/schemas/survey-form.schema";
-import { FieldValues } from "react-hook-form";
-import { createContext, useContext, useEffect, useState } from "react";
-import { defineStepper, Step } from "@stepperize/react";
-import { z } from "zod";
+import { createContext, useContext, useState } from "react";
+import { defineStepper } from "@stepperize/react";
 import { StepType, SurveyFormStepperType } from "@/types/form-provider.type";
 import { SurveyFormType } from "@/types/form.type";
 import OwnershipForm from "@/forms/ownership-form";
@@ -18,10 +16,16 @@ import CityForm from "@/forms/city-form";
 import EmailForm from "@/forms/email-form";
 import PhoneNumberForm from "@/forms/phone-number-form";
 
+if (!process.env.NEXT_PUBLIC_SURVEY_QUESTION_ONE) {
+    throw new Error("NEXT_PUBLIC_SURVEY_QUESTION_ONE is not set")
+}
+
+const QUESTION_ONE = process.env.NEXT_PUBLIC_SURVEY_QUESTION_ONE;
+
 export const surveyFormStepper = defineStepper<StepType<SurveyFormType>[]>(
     {
         id: "1",
-        question: "Enter your zip code to see if your neighborhood is approved.*",
+        question: QUESTION_ONE,
         Form: ZipcodeForm,
         schema: zipCodeFormSchema,
     },
